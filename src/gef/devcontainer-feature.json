@@ -1,0 +1,11 @@
+{
+    "name": "GEF",
+    "id": "gef",
+    "version": "0.1.0",
+    "description": "Install GEF (gdb extended functionality)",
+    "options": {},
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/python"
+    ]
+}

@@ -1,19 +1,19 @@
 #!/bin/sh
 set -e
 
-# install dependencies
-apt -y update
-apt -y install autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev
+export DEBIAN_FRONTEND=noninteractive
 
-cd $(mktemp -d)
+# install dependencies
+apt-get update -y
+apt-get install -y autoconf automake autotools-dev curl python3 python3-pip libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev ninja-build git cmake libglib2.0-dev
 
 # note: this takes a lot of space
-git clone https://github.com/riscv/riscv-gnu-toolchain
+git clone https://github.com/riscv-collab/riscv-gnu-toolchain.git riscv-gnu-toolchain
 
 cd riscv-gnu-toolchain
 
-./configure --prefix=/opt/riscv --with-arch=rv32gc --with-abi=ilp32d
+./configure --prefix=/opt/riscv --enable-multilib
 
-make -j$(nproc) linux build-sim SIM=qemu
+make -j$(nproc) linux
 
-rm -r $(pwd)
+make -j$(nproc) build-sim SIM=qemu

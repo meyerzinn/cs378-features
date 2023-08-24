@@ -1,0 +1,28 @@
+{
+    "sourceInformation": {
+        "source": "devcontainer-cli"
+    },
+    "features": [
+        {
+            "name": "GEF",
+            "id": "gef",
+            "version": "0.1.0",
+            "description": "Install GEF (gdb extended functionality)",
+            "options": {},
+            "installsAfter": [
+                "ghcr.io/devcontainers/features/common-utils",
+                "ghcr.io/devcontainers/features/python"
+            ]
+        },
+        {
+            "name": "RISC-V Toolchain",
+            "id": "riscv-toolchain",
+            "version": "0.1.0",
+            "description": "Install the RISC-V toolchain",
+            "options": {},
+            "installsAfter": [
+                "ghcr.io/devcontainers/features/common-utils"
+            ]
+        }
+    ]
+}
