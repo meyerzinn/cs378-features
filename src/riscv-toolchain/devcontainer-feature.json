@@ -1,9 +1,15 @@
 {
     "name": "RISC-V Toolchain",
     "id": "riscv-toolchain",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Install the RISC-V toolchain",
-    "options": {},
+    "options": {
+        "UPDATE_RC": {
+            "type": "boolean",
+            "default": true,
+            "description": "Add RISCV toolchain binaries to the path"
+        }
+    },
     "installsAfter": [
         "ghcr.io/devcontainers/features/common-utils"
     ]
