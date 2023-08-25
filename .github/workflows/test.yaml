@@ -14,7 +14,6 @@ jobs:
       matrix:
         features:
           - riscv-toolchain
-          - gef
         baseImage:
           - mcr.microsoft.com/devcontainers/base:ubuntu
     steps:
